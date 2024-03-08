@@ -17,6 +17,14 @@ class MultilayerPerception:
         # 参数Θ的初始化操作
         self.thetas = MultilayerPerception.thetas_init(layers)
 
+    def predict(self, data, ):
+        data_processed = prepare_for_training(data, normalize_data=self.normalize_data)[0]
+        num_examples = data_processed.shape[0]
+
+        predictions = MultilayerPerception.feedforward_propagation(data_processed, self.thetas, self.layers)
+
+        return np.argmax(predictions, axis=1).reshape((num_examples, 1))
+
     # 训练模块
     def train(self, max_iterations=1000, alpha=0.1):
         unrolled_theta = MultilayerPerception.thetas_unroll(self.thetas)
