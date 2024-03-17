@@ -12,8 +12,8 @@ num_cells = math.ceil(math.sqrt(numbers_to_display))
 # 创建一个新画布（指定大小为10*10（单位：英寸））
 plt.figure(figsize=(10, 10))
 for plot_index in range(numbers_to_display):
-    # 图像的像素值（data是个二维数组，这里的digit取到了二维数组中第plot_index这一行）
-    digit = data[plot_index:plot_index+1].values # digit是个1*785的数组
+    # 图像的像素值（data是个二维数组，这里的digit取到了二维数组中第plot_index这一行，并用.values转为numpy数组）
+    digit = data[plot_index:plot_index+1].values  # digit是个1*785的数组
     digit_label = digit[0][0]  # digit的第一个数据是标签（即“正确答案”）
     digit_pixels = digit[0][1:]  # digit_pixels是个一维数组 除去第一个后，剩下的数据就是所有像素点（28*28=784个像素点，即输入层的784个神经元）
     # 图像大小（28*28）
@@ -30,6 +30,7 @@ plt.show()
 train_data = data.sample(frac=0.8)
 test_data = data.drop(train_data.index)
 
+# DataFrame转为numpy数组
 train_data = train_data.values
 test_data = test_data.values
 
@@ -44,7 +45,9 @@ y_test = test_data[:, [0]]
 layers = [784, 25, 10]
 
 normalize_data = True
+# 迭代次数，即损失值减少的次数或权重参数更新的次数
 max_iterations = 500
+# 学习率
 alpha = 0.1
 
 multilayer_perception = MultilayerPerception(x_train, y_train, layers, normalize_data)
