@@ -62,5 +62,5 @@ def run():
     print(f'After {num_iteration} iterations b = {b}, w = {w}, '
         + f'error = {compute_error_for_line_given_points(b, m, points)}')
     
-    if __name__ == 'main':
-        run()
+if __name__ == 'main':
+    run()
