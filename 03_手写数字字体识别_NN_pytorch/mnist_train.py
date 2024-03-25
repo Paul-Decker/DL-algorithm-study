@@ -62,6 +62,7 @@ class Net(nn.Module):
     # 前向传播
     def forward(self, x):
         # x: [b, 1, 28, 28]
+        # [batch, channel, h, w]：batch 指照片的数量，channel 指的是层数（例如RGB的channel=3），照片的高，照片的宽
         # h1 = relu(xw1+b1)
         x = F.relu(self.fc1(x))
         # h2 = relu(h1w2+b2)
