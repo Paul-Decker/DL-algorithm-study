@@ -6,7 +6,7 @@ import math
 
 from multilyer_perceptron import MultilayerPerception
 
-data = pd.read_csv('../data/mnist-demo.csv')
+data = pd.read_csv('./data/mnist-demo.csv')
 numbers_to_display = 25
 num_cells = math.ceil(math.sqrt(numbers_to_display))
 # 创建一个新画布（指定大小为10*10（单位：英寸））
