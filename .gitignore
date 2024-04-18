@@ -5,3 +5,6 @@ __pycache__
 
 # 忽略 04_10分类任务中的cifar数据集
 cifar
+
+# 忽略保存的网络模型
+checkpoint.pth
