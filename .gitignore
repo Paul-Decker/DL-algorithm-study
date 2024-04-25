@@ -1,13 +1,14 @@
-# v1.02
+# v1.03
 
 # 忽略所有 __pycache__ 目录
 __pycache__
-
-# 忽略 04_10分类任务中的cifar数据集
-cifar
 
 # 忽略保存的网络模型
 checkpoint*.pth
 
 # 忽略 .idea
 .idea
+
+# 忽略可以直接下载的数据集
+cifar
+mnist_data
