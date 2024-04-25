@@ -1,4 +1,4 @@
-# v1.01
+# v1.02
 
 # 忽略所有 __pycache__ 目录
 __pycache__
@@ -7,4 +7,7 @@ __pycache__
 cifar
 
 # 忽略保存的网络模型
-checkpoint.pth
+checkpoint*.pth
+
+# 忽略 .idea
+.idea
