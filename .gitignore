@@ -1,7 +1,11 @@
-# v1.03
+# v1.04
 
-# 忽略所有 __pycache__ 目录
+# 忽略目录
 __pycache__
+#   测试
+00_test
+#   训练好的模型及其训练过程
+checkpoint_*
 
 # 忽略保存的网络模型
 checkpoint*.pth
